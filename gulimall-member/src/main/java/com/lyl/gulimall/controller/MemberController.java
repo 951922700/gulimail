@@ -14,6 +14,7 @@ import com.lyl.gulimall.entity.MemberEntity;
 import com.lyl.gulimall.service.MemberService;
 import com.lyl.common.utils.PageUtils;
 import com.lyl.common.utils.R;
+import com.lyl.gulimall.feign.CouponFeignService;
 
 
 
@@ -29,6 +30,9 @@ import com.lyl.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    CouponFeignService couponFeignService;
 
     /**
      * 列表
@@ -86,4 +90,14 @@ public class MemberController {
         return R.ok();
     }
 
+
+    @RequestMapping("/coupons")
+    public R test(){
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("张三");
+        R membercoupons = couponFeignService.membercoupons(); //假设张三去数据库查了后返回了张三的优惠券信息
+
+        // 打印会员和优惠券信息
+        return R.ok().put("member",memberEntity).put("coupons",membercoupons.get("coupons"));
+    }
 }

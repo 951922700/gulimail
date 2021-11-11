@@ -3,6 +3,12 @@ spring:
     username: root
     password: 943033940
     url: jdbc:mysql://localhost:3306/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+  application:
+    name: gulimall-coupon
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
 
 
 mybatis-plus:
