@@ -1,12 +1,11 @@
 package com.lyl.gulimall;
 
 
-
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GulimailCouponApplicationTests {
+class GulimallGatewayApplicationTests {
 
     @Test
     void contextLoads() {

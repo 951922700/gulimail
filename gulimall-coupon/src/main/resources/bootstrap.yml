@@ -1,0 +1,13 @@
+spring:
+#  profiles:
+#    active: dev  #${spring.profile.active}
+  application:
+   name: gulimall-coupon #${prefix}
+  cloud:
+   nacos:
+    config:
+     server-addr: localhost:8848
+     file-extension: yaml
+
+#      file-extension: yaml  #${file-extension}
+#${prefix} - ${spring.profiles.active} . ${file-extension}

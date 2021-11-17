@@ -18,6 +18,13 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 600000
+
 server:
   port: 8000
 

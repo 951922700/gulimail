@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,16 @@ import com.lyl.common.utils.R;
 public class CouponController  {
     @Autowired
     private CouponService couponService;
+
+    @Value("${config.user.name}")//从application.properties中获取//不要写user.name，他是环境里的变量
+    private String name;
+    @Value("${config.user.age}")
+    private Integer age;
+    @RequestMapping("/test")
+    public R test(){
+
+        return R.ok().put("name",name).put("age",age);
+    }
 
     /**
      * 列表
