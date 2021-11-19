@@ -9,9 +9,6 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
-      config:
-        server-addr: localhost:8848
-        file-extension: yaml
 
 
 mybatis-plus:
@@ -24,7 +21,3 @@ mybatis-plus:
 
 server:
   port: 7000
-config:
-  user:
-    name: "张三"
-    age: 12
