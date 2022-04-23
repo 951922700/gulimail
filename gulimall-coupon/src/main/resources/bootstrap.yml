@@ -7,7 +7,7 @@ spring:
    nacos:
     config:
      server-addr: localhost:8848
-     file-extension: yaml
+     file-extension: yml
 
 #      file-extension: yaml  #${file-extension}
 #${prefix} - ${spring.profiles.active} . ${file-extension}
